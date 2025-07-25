@@ -204,14 +204,15 @@ CORS_ALLOW_HEADERS = [
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",  # Frontend origin
-    "http://127.0.0.1:3000",  # Frontend origin
+    # "http://localhost:3000",  # Frontend origin
+    # "http://127.0.0.1:3000",  # Frontend origin
+    "https://web-production-9fcc5.up.railway.app/",
 ]
 
 # settings.py
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # or 127.0.0.1 if needed
-    "http://127.0.1:3000",  # or localhost if needed
+    # "http://localhost:3000",  # or 127.0.0.1 if needed
+    "https://web-production-9fcc5.up.railway.app/",
 ]
 
 
