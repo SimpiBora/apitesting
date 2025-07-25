@@ -22,7 +22,7 @@ DEBUG = os.environ.get("DEBUG")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
-ALLOWED_HOSTS = ["web-production-9fcc5.up.railway.app", "*"]
+ALLOWED_HOSTS = ["*"]
 
 
 # ALLOWED_HOSTS = []
@@ -170,6 +170,8 @@ STATIC_ROOT = "static/"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+StaticFilesStorage = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
