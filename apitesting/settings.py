@@ -21,7 +21,9 @@ DEBUG = os.environ.get("DEBUG")
 # DEBUG = True  # Set to False in production
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = ['web-production-9fcc5.up.railway.app']
+
 
 # ALLOWED_HOSTS = []
 
