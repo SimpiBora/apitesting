@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     # corse header
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -166,12 +167,17 @@ USE_TZ = True
 # STATIC_URL = "static/"
 
 STATIC_URL = "static/"
-STATIC_ROOT = "static/"
+# STATIC_ROOT = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-StaticFilesStorage = "django.contrib.staticfiles.storage.StaticFilesStorage"
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For collectstatic
+
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -206,13 +212,23 @@ CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     # "http://localhost:3000",  # Frontend origin
     # "http://127.0.0.1:3000",  # Frontend origin
-    "https://web-production-9fcc5.up.railway.app/",
+    "https://web-production-9fcc5.up.railway.app",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://web-production-9fcc5.up.railway.app",
+]
+
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = "None"
 
 # settings.py
 CORS_ALLOWED_ORIGINS = [
     # "http://localhost:3000",  # or 127.0.0.1 if needed
-    "https://web-production-9fcc5.up.railway.app/",
+    "https://web-production-9fcc5.up.railway.app",
 ]
 
 
