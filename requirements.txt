@@ -11,6 +11,7 @@ Django==5.2.4
 django-cors-headers==4.7.0
 djangorestframework==3.16.0
 drf-spectacular==0.28.0
+Faker==37.4.2
 gunicorn==23.0.0
 h11==0.16.0
 httptools==0.6.4
@@ -35,3 +36,4 @@ urllib3==2.5.0
 uvicorn==0.35.0
 watchfiles==1.1.0
 websockets==15.0.1
+whitenoise==6.9.0
