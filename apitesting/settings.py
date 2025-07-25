@@ -22,7 +22,7 @@ DEBUG = os.environ.get("DEBUG")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
-ALLOWED_HOSTS = ['web-production-9fcc5.up.railway.app','*']
+ALLOWED_HOSTS = ["web-production-9fcc5.up.railway.app", "*"]
 
 
 # ALLOWED_HOSTS = []
@@ -61,7 +61,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-     # corse header
+    # corse header
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -105,14 +105,26 @@ AUTH_USER_MODEL = (
     "accounts.User"  # "accounts.User"  # 'accounts' should be the name of your app
 )
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "tiktokapi",  # database name
+#         "USER": "admin",
+#         "PASSWORD": "admin",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }
+# }
+
+# from railway
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "tiktokapi",  # database name
-        "USER": "admin",
-        "PASSWORD": "admin",
-        "HOST": "localhost",
-        "PORT": "5432",
+        "NAME": os.environ.get("DB_NAME"),
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": os.environ.get("DB_PORT"),  # Default PostgreSQL port
     }
 }
 
