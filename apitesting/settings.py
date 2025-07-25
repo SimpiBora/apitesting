@@ -179,10 +179,10 @@ StaticFilesStorage = "django.contrib.staticfiles.storage.StaticFilesStorage"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Add your frontend's URL
-    "http://127.0.0.1:3000",  # If you're using localhost
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # Add your frontend's URL
+#     "http://127.0.0.1:3000",  # If you're using localhost
+# ]
 
 # Allow headers and methods if needed:
 # CORS_ALLOW_HEADERS = ['*']
